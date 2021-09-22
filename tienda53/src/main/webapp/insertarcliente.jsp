@@ -146,7 +146,7 @@
 
 	<script>
 		function enviar() {
-			var x = document.getElementById("nombre_cliente").value;
+			//var x = document.getElementById("nombre_cliente").value;
 			var y = document.getElementById("cedula_cliente").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
@@ -160,13 +160,13 @@
 			for (i = 0; i < clientes.length; i++) {
 				console.log(clientes[i].cliente);
 				console.log(clientes[i].cedula_cliente);
-				if (clientes[i].cliente ===x ) {
+				/*if (clientes[i].cliente ==x ) {
 					console.log(clientes[i].cliente +" "+x);	
 					coincidencia =true
 					break;
-				}
+				}*/
 				
-				if (clientes[i].cedula_cliente ===y ) {
+				if (clientes[i].cedula_cliente ==y ) {
 					console.log(clientes[i].cedula_cliente +" "+y);	
 					coincidencia =true
 					break;
