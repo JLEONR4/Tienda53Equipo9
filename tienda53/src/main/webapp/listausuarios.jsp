@@ -109,7 +109,7 @@
 					<i class="fas fa-pen-alt"></i> Actualizar usuario</button>
 					<button type="button" class="btn btn-primary"onclick="window.location.href='/buscarusuario.jsp'">
 					<i class="fas fa-search"></i> Buscar un usuario</button>
-					<button type="button" class="btn btn-primary" onclick="window.location.href='/listausuario.jsp'">
+					<button type="button" class="btn btn-primary" onclick="window.location.href='/listausuarios.jsp'">
 					<i class="fas fa-search"></i> Listar todos los usuarios</button>
 				</div>
 			</div>
