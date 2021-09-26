@@ -34,7 +34,6 @@
 
 <body>
 
-	</nav>
 
 	<!-- Navbar modulos-->
 	<nav class="navbar navbar-dark bg-dark">
