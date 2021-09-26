@@ -151,7 +151,7 @@ public class ClientesDAO {
 		return listaclientes;
 	}
 
-	public void eliminarCliente(Integer cedula_usuario) {
+	public void eliminarCliente(Integer cedula_cliente) {
 		
 		//instancia de la conexion
 		Conexion conex = new Conexion();
@@ -161,7 +161,7 @@ public class ClientesDAO {
 			Statement consulta = conex.getConnection().createStatement();
 			
 			//preparando sentencia a realizar
-			String sentencia = "delete from usuarios where cedula_usuario=" + cedula_usuario + ";";
+			String sentencia = "delete from clientes where cedula_cliente=" + cedula_cliente + ";";
 			
 			//impresion de verificación
 			System.out.println("Registrado " + sentencia);
@@ -176,20 +176,20 @@ public class ClientesDAO {
 		} catch (SQLException e) {
 			//si hay un error en el sql mostrarlo
 			System.out.println("------------------- ERROR --------------");
-			System.out.println("No se pudo eliminar el usuario");
+			System.out.println("No se pudo eliminar el cliente");
 			System.out.println(e.getMessage());
 			System.out.println(e.getErrorCode());
 		} catch (Exception e) {
 			//si hay cualquier otro error mostrarlo
 			System.out.println("------------------- ERROR --------------");
-			System.out.println("No se pudo eliminar el usuario");
+			System.out.println("No se pudo eliminar el cliente");
 			System.out.println(e.getMessage());
 			System.out.println(e.getLocalizedMessage());
 		}
 
 	}
 
-	public void actualizarUsuario(ClientesVO user) {
+	public void actualizarCliente(ClientesVO cliente) {
 		
 		//instancia de conexion
 		Conexion conex = new Conexion();
@@ -200,11 +200,11 @@ public class ClientesDAO {
 			
 			//String con la sentencia a ejecutar
 			String sentencia = "UPDATE clientes "
-					+ "SET direccion_cliente= '"+user.getDireccion_cliente()+"',"
-					+ "email_cliente = '"+user.getEmail_cliente()+"',"
-					+ "nombre_cliente = '"+user.getNombre_cliente()+"',"
-					+ "telefono_cliente = '"+user.getTelefono_cliente()+"' "
-					+ "WHERE cedula_usuario = "+user.getCedula_cliente()+";";
+					+ "SET direccion_cliente= '"+cliente.getDireccion_cliente()+"',"
+					+ "email_cliente = '"+cliente.getEmail_cliente()+"',"
+					+ "nombre_cliente = '"+cliente.getNombre_cliente()+"',"
+					+ "telefono_cliente = '"+cliente.getTelefono_cliente()+"' "
+					+ "WHERE cedula_usuario = "+cliente.getCedula_cliente()+";";
 			
 			//ejecuta la sentencia 
 			estatuto.executeUpdate(sentencia);
@@ -219,13 +219,13 @@ public class ClientesDAO {
 		} catch (SQLException e) {
 			//si hay un error en el sql mostrarlo
 			System.out.println("------------------- ERROR --------------");
-			System.out.println("No se pudo actualizar  el usuario");
+			System.out.println("No se pudo actualizar  el cliente");
 			System.out.println(e.getMessage());
 			System.out.println(e.getErrorCode());
 		} catch (Exception e) {
 			//si hay cualquier otro error mostrarlo
 			System.out.println("------------------- ERROR --------------");
-			System.out.println("No se pudo eliminar el usuario");
+			System.out.println("No se pudo eliminar el cliente");
 			System.out.println(e.getMessage());
 			System.out.println(e.getLocalizedMessage());
 		}

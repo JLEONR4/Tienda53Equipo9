@@ -20,9 +20,9 @@ public class ClienteController {
      * */
 
     @PostMapping("/registrarcliente")
-    public void registrarCliente(ClientesVO user) {
+    public void registrarCliente(ClientesVO cliente) {
         ClientesDAO Dao = new ClientesDAO();
-        Dao.registrarCliente(user);
+        Dao.registrarCliente(cliente);
     }
 
     @GetMapping("/consultarclientes")
@@ -43,9 +43,9 @@ public class ClienteController {
     }
 
     @PutMapping("/actualizarClientes")
-    public void actualizarUsuario(ClientesVO cliente) {
+    public void actualizarCliente(ClientesVO cliente) {
         ClientesDAO Dao = new ClientesDAO();
-        Dao.registrarCliente(cliente);
+        Dao.actualizarCliente(cliente);
     }
 
 
