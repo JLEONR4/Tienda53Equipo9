@@ -7,9 +7,9 @@
 
 <!-- paquete de caracteres -->
 <meta charset="utf-8">
-<!-- Tamaño de la pantalla -->
+<!-- TamaÃ±o de la pantalla -->
 <meta name="viewport" content="width=device-width">
-<!-- titulo de la pestaña -->
+<!-- titulo de la pestaÃ±a -->
 <title>Actualizar cliente</title>
 <!-- bootstrap-->
 <link
