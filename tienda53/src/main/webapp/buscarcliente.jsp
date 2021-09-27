@@ -10,7 +10,7 @@
 <!-- Tamaño de la pantalla -->
 <meta name="viewport" content="width=device-width">
 <!-- titulo de la pestaña -->
-<title>Insertando cliente</title>
+<title>Buscar cliente</title>
 <!-- bootstrap-->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -37,17 +37,17 @@
 	<!-- Navbar modulos-->
 	<nav class="navbar navbar-light" style="background-color: #38d39f;">
 		<div class="container">
-			<a class="navbar-brand links" href="listaclientes.jsp"> <i
-				class="fas fa-users"></i> Usuario
+			<a class="navbar-brand links" href="listausuarios.jsp"> <i
+				class="fas fa-users"></i> Usuarios
 			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
 				class="fas fa-address-book"></i> Clientes
-			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
+			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
 				class="fas fa-truck"></i> Proveedores
-			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
+			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
 				class="fas fa-apple-alt"></i> Productos
-			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
+			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
 				class="fas fa-money-check-alt"></i> Ventas
-			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
+			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
 				class="fas fa-clipboard-list"></i> Reportes
 			</a>
 		</div>
@@ -55,66 +55,63 @@
 
 	<div style="padding-left: 5px">
 		<h1>
-			Datos del nuevo cliente
+			<i class="fas fa-search"></i> Buscando un cliente
 		</h1>
 		<div class="container">
-		
-		
+
+
 			<div id="error" class="alert alert-danger visually-hidden"
-					role="alert">Error al crear el cliente, verifique que no exista un cliente con la cedula y cliente dados</div>
-					
+				role="alert">Error al buscar el cliente, el cliente no existe</div>
+
 			<div id="correcto" class="alert alert-success visually-hidden"
-				role="alert">cliente creado con exito</div>
+				role="alert">Cliente encontrado con exito</div>
 
 			<form id="form1">
+			
+				<div class="input-group mb-3">
+					<span class="input-group-text" id="basic-addon4">Cliente a buscar</span> <input
+						type="text" class="form-control"
+						placeholder="Inserte numero de cedula del cliente aqui..."
+						aria-describedby="basic-addon4" required id="cedula_clientesearch" >
+				</div>
+				<br>
+				<br>
+				<br>
 				<div class="input-group mb-3">
 					<span class="input-group-text" id="basic-addon1">Cedula</span> <input
 						type="text" class="form-control"
-						placeholder="Inserte cedula aqui..."
-						aria-describedby="basic-addon1" required id="cedula_cliente">
+						aria-describedby="basic-addon1" required id="cedula_cliente" disabled="disabled">
 				</div>
 
 				<div class="input-group mb-3">
 					<span class="input-group-text" id="basic-addon2">Dirección cliente</span> <input
 						type="text" class="form-control"
-						placeholder="Inserte direccion aqui..."
-						aria-describedby="basic-addon2" required id="direccion_cliente">
+						aria-describedby="basic-addon2" required id="direccion_cliente" disabled="disabled">
 				</div>
 
 				<div class="input-group mb-3">
 					<span class="input-group-text" id="basic-addon3">Email cliente</span>
 					<input type="text" class="form-control"
-						placeholder="Inserte email aqui..."
-						aria-describedby="basic-addon3" required id="email_cliente">
+						aria-describedby="basic-addon3" required id="email_cliente"  disabled="disabled">
 				</div>
 
 				<div class="input-group mb-3">
 					<span class="input-group-text" id="basic-addon4">Nombre cliente</span> <input
 						type="text" class="form-control"
-						placeholder="Inserte nombre cliente aqui..."
-						aria-describedby="basic-addon4" required id="nombre_cliente">
+						aria-describedby="basic-addon4" required id="nombre_cliente"  disabled="disabled">
 				</div>
 
 				<div class="input-group mb-3">
 					<span class="input-group-text" id="basic-addon5">Telefono cliente</span> <input
 						type="text" class="form-control"
-						placeholder="Inserte telefono aqui..."
-						aria-describedby="basic-addon5" required id="telefono_cliente">
+						aria-describedby="basic-addon5" required id="telefono_cliente"  disabled="disabled">
 				</div>
-
-
-
-
-
 			</form>
 
-			<button type="button" class="btn btn-success" onclick="enviar()">
-				<i class="fas fa-check"></i> Insertar nuevo cliente
+			<button type="button" class="btn btn-primary" onclick="enviar()">
+				<i class="fas fa-search"></i> Buscar cliente
 			</button>
-
-
-
-
+			
 			<h1>
 				Operaciones
 			</h1>
@@ -145,60 +142,43 @@
 		</div>
 
 	</div>
-
+	
+	
 	<script>
 		function enviar() {
-			//var x = document.getElementById("nombre_cliente").value;
-			var y = document.getElementById("cedula_cliente").value;
-			var req = new XMLHttpRequest();
-			var coincidencia = false;
-			req.open('GET', 'http://localhost:8080/listarclientes', false);
-			req.send(null);
-			var clientes=null;
-			if (req.status == 200)
-				clientes=JSON.parse(req.responseText);
-			  	console.log(JSON.parse(req.responseText));
-			  	
-			for (i = 0; i < clientes.length; i++) {
-				console.log(clientes[i].cliente);
-				console.log(clientes[i].cedula_cliente);
-				/*if (clientes[i].cliente ==x ) {
-					console.log(clientes[i].cliente +" "+x);	
-					coincidencia =true
-					break;
-				}*/
+
 				
-				if (clientes[i].cedula_cliente ==y ) {
-					console.log(clientes[i].cedula_cliente +" "+y);	
-					coincidencia =true
-					break;
-				}
-			}
-			console.log(coincidencia);	
+				var req = new XMLHttpRequest();
+				var coincidencia = false;
+				var cedula=   document.getElementById("cedula_clientesearch").value;
+				req.open('GET', 'http://localhost:8080/consultarcliente?cedula_cliente='+cedula, false);
+				req.send(null);
+				var cedula_cliente = null;
+				if (req.status == 200)
+					cedula_cliente= JSON.parse(req.responseText);
+				console.log(JSON.parse(req.responseText));
+				
 			
-			if (coincidencia==false){
-				var formData = new FormData();
-	 			formData.append("cedula_cliente", document.getElementById("cedula_cliente").value);
-	 			formData.append("direccion_cliente", document.getElementById("direccion_cliente").value);
-	 			formData.append("email_cliente", document.getElementById("email_cliente").value);
-	 			formData.append("nombre_cliente",document.getElementById("nombre_cliente").value);
-	 			formData.append("telefono_cliente",document.getElementById("telefono_cliente").value);
-	 			var xhr = new XMLHttpRequest();
-	 			xhr.open("POST", "http://localhost:8080/registrarcliente");
-	 			
+
 				var element = document.getElementById("error");
 				element.classList.add("visually-hidden");
 				var element2 = document.getElementById("correcto");
 				element2.classList.remove("visually-hidden");
 				
-				document.getElementById("cedula_cliente").value = "";
-				document.getElementById("direccion_cliente").value = "";
-				document.getElementById("email_cliente").value = "";
-				document.getElementById("nombre_cliente").value = "";
-				document.getElementById("telefono_cliente").value = "";
-	 			xhr.send(formData);
+				console.log(cedula_cliente.toString());
+				
+			if (cedula_cliente.toString()!=""){
 
-			}else{
+				document.getElementById("cedula_cliente").value = cedula_cliente[0].cedula_cliente;
+				document.getElementById("direccion_cliente").value = cedula_cliente[0].direccion_cliente;
+				document.getElementById("email_cliente").value = cedula_cliente[0].email_cliente;
+				document.getElementById("nombre_cliente").value = cedula_cliente[0].nombre_cliente;
+				document.getElementById("telefono_cliente").value = cedula_cliente[0].telefono_cliente;
+				
+				document.getElementById("cedula_clientesearch").value = "";
+			
+
+			} else {
 				var element = document.getElementById("error");
 				element.classList.remove("visually-hidden");
 				var element2 = document.getElementById("correcto");
@@ -208,7 +188,7 @@
 				document.getElementById("email_cliente").value = "";
 				document.getElementById("nombre_cliente").value = "";
 				document.getElementById("telefono_cliente").value = "";
-			}	
+			}
 		}
 	</script>
 

@@ -114,10 +114,6 @@
 			</button>
 			
 			<br>
-			<br>
-			<br>
-			<br>
-			<br>
 
 			<h1>
 				<i class="fas fa-cogs"></i> Operaciones

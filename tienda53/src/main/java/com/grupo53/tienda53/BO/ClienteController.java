@@ -25,10 +25,10 @@ public class ClienteController {
         Dao.registrarCliente(cliente);
     }
 
-    @GetMapping("/consultarclientes")
-    public ArrayList<ClientesVO> consultarClientes(int cedula_cliente) {
+    @GetMapping("/consultarcliente")
+    public ArrayList<ClientesVO> consultarCliente(int cedula_cliente) {
         ClientesDAO Dao = new ClientesDAO();
-        return Dao.consultarClientes(cedula_cliente);
+        return Dao.consultarCliente(cedula_cliente);
     }
 
     @GetMapping("/listarclientes")
@@ -36,13 +36,13 @@ public class ClienteController {
         ClientesDAO Dao = new ClientesDAO();
         return Dao.listaDeClientes();
     }
-    @DeleteMapping("/eliminarclientes")
-    public void eliminarClientes(Integer cedula_usuario) {
+    @DeleteMapping("/eliminarcliente")
+    public void eliminarClientes(Integer cedula_cliente) {
         ClientesDAO Dao = new ClientesDAO();
-        Dao.eliminarCliente (cedula_usuario);
+        Dao.eliminarCliente (cedula_cliente);
     }
 
-    @PutMapping("/actualizarClientes")
+    @PutMapping("/actualizarcliente")
     public void actualizarCliente(ClientesVO cliente) {
         ClientesDAO Dao = new ClientesDAO();
         Dao.actualizarCliente(cliente);

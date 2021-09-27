@@ -84,10 +84,9 @@
 			</button>
 			
 			<br>
-			<br>
-			<br>
+
 			<h1>
-				<i class="fas fa-cogs"></i> Operaciones
+				Operaciones
 			</h1>
 			<div class="container">
 				<div class="row">
@@ -116,12 +115,14 @@
 		</div>
 
 	</div>
+	
+	
 	<script>
 		function eliminar() {
 			var y = document.getElementById("cedula_cliente").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
-			req.open('GET', 'http://localhost:8080/listarcliente', false);
+			req.open('GET', 'http://localhost:8080/listarclientes', false);
 			req.send(null);
 			var clientes = null;
 			if (req.status == 200)
@@ -143,7 +144,7 @@
 				var cedula=document.getElementById("cedula_cliente").value;
 				
 				var xhr = new XMLHttpRequest();
-				xhr.open("DELETE", "http://localhost:8080/eliminarcliente?cedula_cliente="+cedula_cliente);
+				xhr.open("DELETE", "http://localhost:8080/eliminarcliente?cedula_cliente="+cedula);
 				
 				var element = document.getElementById("error");
 				element.classList.add("visually-hidden");

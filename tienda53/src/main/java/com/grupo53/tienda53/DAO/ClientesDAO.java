@@ -53,7 +53,7 @@ public class ClientesDAO {
 	 * @param documento
 	 * @return
 	 */
-	public ArrayList<ClientesVO> consultarClientes(int cedula_cliente) {	
+	public ArrayList<ClientesVO> consultarCliente(int cedula_cliente) {	
 		//lista que contendra el o los usuarios obtenidos
 		ArrayList<ClientesVO> listaclientes = new ArrayList<ClientesVO>();		
 		//instancia de la conexión
