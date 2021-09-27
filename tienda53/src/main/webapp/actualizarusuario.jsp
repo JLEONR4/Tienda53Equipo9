@@ -35,19 +35,19 @@
 <body>
 
 	<!-- Navbar modulos-->
-	<nav class="navbar navbar-light" style="background-color: #38d39f;">
+	<nav class="navbar navbar-dark bg-dark">
 		<div class="container">
 			<a class="navbar-brand links" href="listausuarios.jsp"> <i
 				class="fas fa-users"></i> Usuarios
 			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
 				class="fas fa-address-book"></i> Clientes
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
+			</a> <a class="navbar-brand links" href="listaproveedores.jsp"> <i
 				class="fas fa-truck"></i> Proveedores
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
+			</a> <a class="navbar-brand links" href="listaproductos.jsp"> <i
 				class="fas fa-apple-alt"></i> Productos
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
+			</a> <a class="navbar-brand links" href="listaventas.jsp"> <i
 				class="fas fa-money-check-alt"></i> Ventas
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
+			</a> <a class="navbar-brand links" href="listareportes.jsp"> <i
 				class="fas fa-clipboard-list"></i> Reportes
 			</a>
 		</div>
@@ -82,7 +82,7 @@
 				</div>
 
 				<div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon3">Nombrecompleto</span>
+					<span class="input-group-text" id="basic-addon3">Nombre completo</span>
 					<input type="text" class="form-control"
 						placeholder="Inserte nonbre aqui..."
 						aria-describedby="basic-addon3" required id="nombre_usuario">
@@ -154,13 +154,13 @@
 			for (i = 0; i < usuarios.length; i++) {
 				console.log(usuarios[i].usuario);
 				console.log(usuarios[i].cedula_usuario);
-				if (usuarios[i].usuario === x) {
+				if (usuarios[i].usuario == x) {
 					console.log(usuarios[i].usuario + " " + x);
 					coincidencia = true
 					break;
 				}
 
-				if (usuarios[i].cedula_usuario === y) {
+				if (usuarios[i].cedula_usuario == y) {
 					console.log(usuarios[i].cedula_usuario + " " + y);
 					coincidencia = true
 					break;
