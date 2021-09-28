@@ -140,7 +140,6 @@
 
 	<script>
 		function actualizar() {
-			var x = document.getElementById("nombre_cliente").value;
 			var y = document.getElementById("cedula_cliente").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
@@ -154,11 +153,6 @@
 			for (i = 0; i < clientes.length; i++) {
 				console.log(clientes[i].cliente);
 				console.log(clientes[i].cedula_cliente);
-				if (clientes[i].cliente == x) {
-					console.log(clientes[i].cliente + " " + x);
-					coincidencia = true
-					break;
-				}
 
 				if (clientes[i].cedula_cliente == y) {
 					console.log(clientes[i].cedula_cliente + " " + y);
@@ -181,7 +175,7 @@
 				formData.append("telefono_cliente",
 						document.getElementById("telefono_cliente").value);
 				var xhr = new XMLHttpRequest();
-				xhr.open("PUT", "http://localhost:8080/actualizarclientes");
+				xhr.open("PUT", "http://localhost:8080/actualizarcliente");
 
 				var element = document.getElementById("error");
 				element.classList.add("visually-hidden");
