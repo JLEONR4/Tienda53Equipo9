@@ -204,7 +204,7 @@ public class ClientesDAO {
 					+ "email_cliente = '"+cliente.getEmail_cliente()+"',"
 					+ "nombre_cliente = '"+cliente.getNombre_cliente()+"',"
 					+ "telefono_cliente = '"+cliente.getTelefono_cliente()+"' "
-					+ "WHERE cedula_usuario = "+cliente.getCedula_cliente()+";";
+					+ "WHERE cedula_cliente = "+cliente.getCedula_cliente()+";";
 			
 			//ejecuta la sentencia 
 			estatuto.executeUpdate(sentencia);
