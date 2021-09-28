@@ -10,7 +10,7 @@
 <!-- Tamaño de la pantalla -->
 <meta name="viewport" content="width=device-width">
 <!-- titulo de la pestaña -->
-<title>Insertando cliente</title>
+<title>Eliminar cliente</title>
 <!-- bootstrap-->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -34,20 +34,21 @@
 
 <body>
 
+
 	<!-- Navbar modulos-->
 	<nav class="navbar navbar-light" style="background-color: #38d39f;">
 		<div class="container">
 			<a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-users"></i> Usuario
+				class="fas fa-users"></i> Usuarios
 			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
 				class="fas fa-address-book"></i> Clientes
-			</a> <a class="navbar-brand links" href="listaproveedores.jsp"> <i
+			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
 				class="fas fa-truck"></i> Proveedores
-			</a> <a class="navbar-brand links" href="listaproductos.jsp"> <i
+			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
 				class="fas fa-apple-alt"></i> Productos
-			</a> <a class="navbar-brand links" href="listaventas.jsp"> <i
+			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
 				class="fas fa-money-check-alt"></i> Ventas
-			</a> <a class="navbar-brand links" href="listareportes.jsp"> <i
+			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
 				class="fas fa-clipboard-list"></i> Reportes
 			</a>
 		</div>
@@ -55,18 +56,20 @@
 
 	<div style="padding-left: 5px">
 		<h1>
-			Datos del nuevo cliente
+			<i class="fas fa-skull-crossbones"></i> Datos del cliente a eliminar
 		</h1>
 		<div class="container">
-		
-		
+
+
 			<div id="error" class="alert alert-danger visually-hidden"
-					role="alert">Error al crear el cliente, verifique que no exista un cliente con la cedula y cliente dados</div>
-					
+				role="alert">Error al eliminar el cliente, verifique que 
+				exista un cliente con la cedula</div>
+
 			<div id="correcto" class="alert alert-success visually-hidden"
-				role="alert">cliente creado con exito</div>
+				role="alert">Cliente eliminado con exito</div>
 
 			<form id="form1">
+			
 				<div class="input-group mb-3">
 					<span class="input-group-text" id="basic-addon1">Cedula</span> <input
 						type="text" class="form-control"
@@ -74,46 +77,13 @@
 						aria-describedby="basic-addon1" required id="cedula_cliente">
 				</div>
 
-				<div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon2">Dirección cliente</span> <input
-						type="text" class="form-control"
-						placeholder="Inserte direccion aqui..."
-						aria-describedby="basic-addon2" required id="direccion_cliente">
-				</div>
-
-				<div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon3">Email cliente</span>
-					<input type="text" class="form-control"
-						placeholder="Inserte email aqui..."
-						aria-describedby="basic-addon3" required id="email_cliente">
-				</div>
-
-				<div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon4">Nombre cliente</span> <input
-						type="text" class="form-control"
-						placeholder="Inserte nombre cliente aqui..."
-						aria-describedby="basic-addon4" required id="nombre_cliente">
-				</div>
-
-				<div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon5">Telefono cliente</span> <input
-						type="text" class="form-control"
-						placeholder="Inserte telefono aqui..."
-						aria-describedby="basic-addon5" required id="telefono_cliente">
-				</div>
-
-
-
-
-
 			</form>
 
-			<button type="button" class="btn btn-success" onclick="enviar()">
-				<i class="fas fa-check"></i> Insertar nuevo cliente
+			<button type="button" class="btn btn-danger" onclick="eliminar()">
+				<i class="fas fa-skull-crossbones"></i> Eliminar cliente
 			</button>
-
-
-
+			
+			<br>
 
 			<h1>
 				Operaciones
@@ -145,69 +115,51 @@
 		</div>
 
 	</div>
-
+	
+	
 	<script>
-		function enviar() {
-			//var x = document.getElementById("nombre_cliente").value;
+		function eliminar() {
 			var y = document.getElementById("cedula_cliente").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
 			req.open('GET', 'http://localhost:8080/listarclientes', false);
 			req.send(null);
-			var clientes=null;
+			var clientes = null;
 			if (req.status == 200)
-				clientes=JSON.parse(req.responseText);
-			  	console.log(JSON.parse(req.responseText));
-			  	
+				clientes = JSON.parse(req.responseText);
+			console.log(JSON.parse(req.responseText));
 			for (i = 0; i < clientes.length; i++) {
-				console.log(clientes[i].cliente);
-				console.log(clientes[i].cedula_cliente);
-				/*if (clientes[i].cliente ==x ) {
-					console.log(clientes[i].cliente +" "+x);	
-					coincidencia =true
-					break;
-				}*/
 				
-				if (clientes[i].cedula_cliente ==y ) {
-					console.log(clientes[i].cedula_cliente +" "+y);	
-					coincidencia =true
+				console.log(clientes[i].cedula_cliente);
+				if (clientes[i].cedula_cliente == y) {
+					console.log(clientes[i].cedula_cliente + " " + y);
+					coincidencia = true;
 					break;
 				}
 			}
-			console.log(coincidencia);	
-			
-			if (coincidencia==false){
-				var formData = new FormData();
-	 			formData.append("cedula_cliente", document.getElementById("cedula_cliente").value);
-	 			formData.append("direccion_cliente", document.getElementById("direccion_cliente").value);
-	 			formData.append("email_cliente", document.getElementById("email_cliente").value);
-	 			formData.append("nombre_cliente",document.getElementById("nombre_cliente").value);
-	 			formData.append("telefono_cliente",document.getElementById("telefono_cliente").value);
-	 			var xhr = new XMLHttpRequest();
-	 			xhr.open("POST", "http://localhost:8080/registrarcliente");
-	 			
+			console.log(coincidencia);
+			if (coincidencia != false) {
+				var cedula=document.getElementById("cedula_cliente").value;
+				
+				var xhr = new XMLHttpRequest();
+				xhr.open("DELETE", "http://localhost:8080/eliminarcliente?cedula_cliente="+cedula);
+				
 				var element = document.getElementById("error");
 				element.classList.add("visually-hidden");
+				
 				var element2 = document.getElementById("correcto");
 				element2.classList.remove("visually-hidden");
-				
 				document.getElementById("cedula_cliente").value = "";
-				document.getElementById("direccion_cliente").value = "";
-				document.getElementById("email_cliente").value = "";
-				document.getElementById("nombre_cliente").value = "";
-				document.getElementById("telefono_cliente").value = "";
-	 			xhr.send(formData);
-			}else{
+				xhr.send();
+			} else {
 				var element = document.getElementById("error");
 				element.classList.remove("visually-hidden");
+				
 				var element2 = document.getElementById("correcto");
 				element2.classList.add("visually-hidden");
-				document.getElementById("cedula_cliente").value = "";
-				document.getElementById("direccion_cliente").value = "";
-				document.getElementById("email_cliente").value = "";
-				document.getElementById("nombre_cliente").value = "";
-				document.getElementById("telefono_cliente").value = "";
-			}	
+				
+				document.getElementById("cedula_cliente").value = "";;
+			}
 		}
 	</script>
 

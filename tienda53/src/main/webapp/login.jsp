@@ -1,49 +1,47 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Login MinTIC Ciclo3</title>
-    <!-- font awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <title>repl.it</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
-</head>
-
-<body>
-    <img class="wave" src="wave.png">
-    <div class="container">
-        <div class="img">
-            <img src="bg.svg">
-        </div>
-        <div class="login">
-            <form action="index.html">
-                <img src="avatar.svg">
-                <h2 class="title">Bienvenido</h2>
-                <div class="usuario">
-                    <i class="fas fa-user-alt" ></i>
-                    <label for="username">Usuario</label>
-                    <input type="text" placeholder="Email o usuario" id="inputuser">
-                </div><br>
-                <div class="password">
-                    <i class="fas fa-lock"></i>
-                    <label for="password">Contraseña</label>
-                    <input type="password" placeholder="Contraseña" id="inputpass">
-                </div>
-                <a href="#">¿Ovidaste tu contraseña?</a>
-                <button type="button" class="btn" onclick="comparar()">Iniciar sesión</button>
-                <div id="error" class="alert alert-danger visually-hidden"
-					role="alert">Usuario o contraseña incorrecta!</div>
-                
+  </head>
+  <body>
+    	<img class="wave" src="wave.png">
+	<div class="container">
+		<div class="img">
+			<img src="bg.svg">
+		</div>
+		<div class="login-content">
+			<form action="listausuarios.jsp">
+				<img src="avatar.svg">
+				<h2 class="title">Bienvenido</h2>
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Usuario</h5>
+           		   		<input type="text" class="input">
+           		   </div>
+           		</div>
+           		<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Contraseña</h5>
+           		    	<input type="password" class="input">
+            	   </div>
+            	</div>
+            	<a href="#">¿ovidaste tu contraseña?</a>
+            	<input type="submit" class="btn" value="acceder">
             </form>
         </div>
     </div>
-    
-    
+    <script src="script.js"></script>
     <!-- Script que trae la informacion de la api y la compara con las entradas -->
 	<script>
 		function comparar() {
