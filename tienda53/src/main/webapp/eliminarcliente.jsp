@@ -38,17 +38,17 @@
 	<!-- Navbar modulos-->
 	<nav class="navbar navbar-light" style="background-color: #38d39f;">
 		<div class="container">
-			<a class="navbar-brand links" href="listaclientes.jsp"> <i
-				class="fas fa-users"></i> clientes
+			<a class="navbar-brand links" href="listausuarios.jsp"> <i
+				class="fas fa-users"></i> Usuarios
 			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
 				class="fas fa-address-book"></i> Clientes
-			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
+			</a> <a class="navbar-brand links" href="listaproveedores.jsp"> <i
 				class="fas fa-truck"></i> Proveedores
-			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
+			</a> <a class="navbar-brand links" href="insertarproducto.jsp"> <i
 				class="fas fa-apple-alt"></i> Productos
-			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
+			</a> <a class="navbar-brand links" href="listaventas.jsp"> <i
 				class="fas fa-money-check-alt"></i> Ventas
-			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
+			</a> <a class="navbar-brand links" href="listareportes.jsp"> <i
 				class="fas fa-clipboard-list"></i> Reportes
 			</a>
 		</div>
