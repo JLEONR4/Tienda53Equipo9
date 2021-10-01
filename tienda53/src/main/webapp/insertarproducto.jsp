@@ -24,9 +24,39 @@
 	integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
 	crossorigin="anonymous">
 
-<!-- Cargando mi hoja de estilo 
-<link href="style.css" rel="stylesheet" type="text/css" />
--->
+<!-- Cargando mi hoja de estilo -->
+<link href="style1.css" rel="stylesheet" type="text/css" />
+
+<script>
+var baseurl = "http://localhost:8080/listarproductos";
+	function loadproductos() {
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.open("GET", baseurl, true);
+		xmlhttp.onreadystatechange = function() {
+			if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+				var productos = JSON.parse(xmlhttp.responseText);
+				var tbltop = "<table class='table table-dark table-striped'><tr><th>Codigo</th><th>Nombre</th><th>NIT proveedor</th><th>Precio de compra</th><th>IVA</th><th>Precio de venta</th><tr>";
+				var main = "";
+				for (i = 0; i < productos.length; i++) {
+					main += "<tr><td>" + productos[i].codigo_producto
+							+ "</td><td>" + productos[i].nombre_producto
+							+ "</td><td>" + productos[i].nit_proveedor
+							+ "</td><td>" + productos[i].precio_compra
+							+ "</td><td>"+ productos[i].iva_compra
+							+ "</td><td>" + productos[i].precio_venta
+							+ "</td></tr>";
+				}
+				var tblbottom = "</table>";
+				var tbl = tbltop + main + tblbottom;
+				document.getElementById("productosinfo").innerHTML = tbl;
+			}
+		};
+		xmlhttp.send();
+	}
+	window.onload = function() {
+		loadproductos();
+	}
+</script>
 
 
 </head>
@@ -81,7 +111,17 @@
 		</div>
 
 	</div>
+	&nbsp;
+	<h1><i class="fas fa-apple-alt"></i> Tabla de productos</h1>
+			<div class="container">
+				<div class="row">
+					<!--  Aqui es donde se autogenera la tabla basado en el script -->
+					<div class="col align-self-center" id="productosinfo">
+					
+					</div>
 	
+				</div>
+			</div>
 	<script>
 		function subirArchivo() {
 
@@ -148,6 +188,6 @@
 			}
 		}
 	</script>
-
+      
 </body>
 </html>
