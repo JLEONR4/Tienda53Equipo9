@@ -202,10 +202,10 @@ public class ProveedoresDAO {
 			
 			//String con la sentencia a ejecutar
 			String sentencia = "UPDATE proveedores "
-					+ "SET ciudad_proveedor = '"+proveedor.getCiudad_proveedor()+"' "
+					+ "SET ciudad_proveedor = '"+proveedor.getCiudad_proveedor()+"',"
 					+ "direccion_proveedor = '"+proveedor.getDireccion_proveedor()+"',"
 					+ "nombre_proveedor= '"+proveedor.getNombre_proveedor()+"',"
-					+ "telefono_proveedor = '"+proveedor.getTelefono_proveedor()+"',"
+					+ "telefono_proveedor = '"+proveedor.getTelefono_proveedor()+"' "
 					+ "WHERE nit_proveedor = "+proveedor.getNit_proveedor()+";";
 			
 			//ejecuta la sentencia 
