@@ -2,10 +2,8 @@ package com.grupo53.tienda53.DTO;
 
 import java.io.Serializable;
 
-//todas las clases entidad deben ser serializables, y deben estar encapsuladas
 public class UsuarioVO implements Serializable{
-	
-	//identificador unico de las clases entidad
+
 	private static final long serialVersionUID = 1L;
 	
 	private Integer cedula_usuario;
@@ -13,30 +11,6 @@ public class UsuarioVO implements Serializable{
 	private String nombre_usuario;
 	private String password;
 	private String usuario;
-	
-	/**
-	 * @param cedula_usuario
-	 * @param email_usuario
-	 * @param nombre_usuario
-	 * @param password
-	 * @param usuario
-	 */
-	
-	
-	
-	public UsuarioVO(Integer cedula_usuario, String email_usuario, String nombre_usuario, String password,
-			String usuario) {
-		super();
-		this.cedula_usuario = cedula_usuario;
-		this.email_usuario = email_usuario;
-		this.nombre_usuario = nombre_usuario;
-		this.password = password;
-		this.usuario = usuario;
-	}	
-	public UsuarioVO() {
-		// TODO Auto-generated constructor stub
-	}
-
 	/**
 	 * @return the cedula_usuario
 	 */

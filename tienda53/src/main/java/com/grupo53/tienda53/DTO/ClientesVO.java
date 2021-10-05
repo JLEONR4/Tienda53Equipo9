@@ -2,9 +2,8 @@ package com.grupo53.tienda53.DTO;
 
 import java.io.Serializable;
 
-public class ClientesVO implements Serializable{
-	
-	//identificador unico de las clases entidad
+public class ClientesVO implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 	
 	private Integer cedula_cliente;
@@ -12,28 +11,6 @@ public class ClientesVO implements Serializable{
 	private String email_cliente ;
 	private String nombre_cliente;
 	private String telefono_cliente;
-	
-	
-	
-	/**
-	 * @param cedula_cliente
-	 * @param direccion_cliente
-	 * @param email_cliente
-	 * @param nombre_cliente
-	 * @param telefono_cliente
-	 */
-	public ClientesVO(Integer cedula_cliente, String direccion_cliente, String email_cliente, String nombre_cliente,
-			String telefono_cliente) {
-		super();
-		this.cedula_cliente = cedula_cliente;
-		this.direccion_cliente = direccion_cliente;
-		this.email_cliente = email_cliente;
-		this.nombre_cliente = nombre_cliente;
-		this.telefono_cliente = telefono_cliente;
-	}
-	public ClientesVO() {
-		// TODO Auto-generated constructor stub
-	}
 	/**
 	 * @return the cedula_cliente
 	 */
@@ -94,5 +71,6 @@ public class ClientesVO implements Serializable{
 	public void setTelefono_cliente(String telefono_cliente) {
 		this.telefono_cliente = telefono_cliente;
 	}
-
+	
+	
 }
