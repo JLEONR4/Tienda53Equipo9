@@ -25,7 +25,7 @@
 	crossorigin="anonymous">
 
 <!-- Cargando mi hoja de estilo -->
-<link href="style1.css" rel="stylesheet" type="text/css" />
+<link href="style2.css" rel="stylesheet" type="text/css" />
 
 
 
@@ -68,7 +68,8 @@
 					<button type="button" class="btn btn-success"
 						onclick="window.location.href='/listareportes.jsp'">
 						<i class="fas fa-money-check-alt"></i> Ventas por Cliente
-					</button>
+				</button>
 				</div>
 			</div>
+			
 </html>
