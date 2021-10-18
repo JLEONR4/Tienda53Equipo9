@@ -178,7 +178,7 @@ public class VentaDAO {
 
 		// instancia de la conexión
 		Conexion conex = new Conexion();
-
+		
 		try {
 			// prepare la sentencia en la base de datos
 			PreparedStatement consulta = conex.getConnection()
@@ -187,11 +187,14 @@ public class VentaDAO {
 
 			// ejecute la sentencia
 			ResultSet res = consulta.executeQuery();
+			
+			System.out.println("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHOOOOOOOOOOOOOOOOOOOLLLLLLLLLLLLLLAAAAAAAAAAAAA");
 
 			// cree un objeto para cada encontrado en la base de datos basado en la clase
 			// entidad con los datos encontrados
 			while (res.next()) {
 				contador = (res.getInt("AUTO_INCREMENT"));
+				System.out.println("El numero del contador es:    "+ contador);
 			}
 
 			// cerrar resultado, sentencia y conexión
