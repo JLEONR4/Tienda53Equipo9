@@ -1,31 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description"
+	content="Proyecto de entrenamiento en desarrollo web" />
+<meta name="author" content="Ing. Diego Rodriguez" />
+<title>Registrar venta</title>
 
-
-<!-- paquete de caracteres -->
-<meta charset="utf-8">
-<!-- Tamaño de la pantalla -->
-<meta name="viewport" content="width=device-width">
-<!-- titulo de la pestaña -->
-<title>Buscar cliente</title>
-<!-- bootstrap-->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
+	crossorigin="anonymous"></script>
 <link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-	crossorigin="anonymous">
-
-<!-- font awesome -->
+	href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css"
+	rel="stylesheet" />
+<link href="css/styles.css" rel="stylesheet" />
 <link rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-	integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
-	crossorigin="anonymous">
-
-<!-- Cargando mi hoja de estilo -->
-<link href="style2.css" rel="stylesheet" type="text/css" />
+	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 <script>
 	window.onload = function() {
 		var req = new XMLHttpRequest();
@@ -40,117 +35,23 @@
 </script>
 </head>
 
-<!-- Navbar modulos-->
-	<body id="body-pd">
-        <div class="l-navbar" id="navbar">
-            <nav class="nav">
-                <div>
-                    <div class="nav__brand">
-                        <ion-icon name="menu-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
-                        <a href="#" class="nav__logo">Tienda 53</a>
-                    </div>
-                    <div href="#" class="nav__link">
-                            <ion-icon name="people-outline" class="nav__icon"></ion-icon>
-                            <span class="nav__name">Usuarios</span> 
+<body class="sb-nav-fixed sb-sidenav-toggled">
+	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+		<!-- Navbar Brand-->
+		<a class="navbar-brand ps-3" href="index.html"><i
+			class="fas fa-fish"></i> Tienda Los Tiburones </a>
+		<!-- Sidebar Toggle-->
+		<button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"
+			id="sidebarToggle" href="#!">
+			<i class="fas fa-bars fa-2x"></i>
+		</button>
+		<!-- Navbar Search-->
+		<form
+			class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
 
+		</form>
+	</nav>
 
-                            <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
-
-                            <ul class="collapse__menu">
-                                <a href="insertarusuario.jsp" class="collapse__sublink">Agregar</a>
-                                <a href="eliminarusuario.jsp" class="collapse__sublink">Eliminar</a>
-                                <a href="actualizarusuario.jsp" class="collapse__sublink">Actualizar</a>
-                                <a href="buscarusuario.jsp" class="collapse__sublink">Buscar</a>
-                                <a href="listausuarios.jsp" class="collapse__sublink">Lista</a>
-                            </ul>
-                        </div>
-                      <div href="#" class="nav__link">
-                            <ion-icon name="pricetag-outline" class="nav__icon"></ion-icon>
-                            <span class="nav__name">Clientes</span>
-
-                            <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
-
-                            <ul class="collapse__menu">
-                                <a href="insertarcliente.jsp" class="collapse__sublink">Agregar</a>
-                                <br>
-                                <a href="eliminarcliente.jsp" class="collapse__sublink">Eliminar</a>
-                                <br>
-                                <a href="actualizarcliente.jsp" class="collapse__sublink">Actualizar</a>
-                                <br>
-                                <a href="buscarcliente.jsp" class="collapse__sublink">Buscar</a>
-                                <br>
-                                <a href="listaclientes.jsp" class="collapse__sublink">Lista</a>
-                            </ul>
-                        </div>
-                        <div href="#" class="nav__link">
-                            <ion-icon name="briefcase-outline" class="nav__icon"></ion-icon>
-                            <span class="nav__name">Proveedores</span>
-
-                            <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
-
-                            <ul class="collapse__menu">
-                                <a href="insertarproveedor.jsp" class="collapse__sublink">Agregar</a>
-                                <br>
-                                <a href="eliminarproveedor.jsp" class="collapse__sublink">Eliminar</a>
-                                <a href="actualizarproveedor.jsp" class="collapse__sublink">Actualizar</a>
-                                <a href="buscarproveedor.jsp" class="collapse__sublink">Buscar</a>
-                                <a href="listaproveedores.jsp" class="collapse__sublink">Lista</a>
-                            </ul>
-                        </div>
-                           <div href="#" class="nav__link">
-                            <ion-icon name="basket-outline" class="nav__icon"></ion-icon>
-                            <span class="nav__name">Productos</span>
-
-                            <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
-
-                            <ul class="collapse__menu">
-                                
-                                <a href="insertarproducto.jsp" class="collapse__sublink">Agregar</a>
-                            </ul>
-                        </div>
-                        </div>
-                           <div href="#" class="nav__link">
-                            <ion-icon name="cash-outline" class="nav__icon"></ion-icon>
-                            <span class="nav__name">Ventas</span>
-
-                            <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
-
-                            <ul class="collapse__menu">
-                                
-                                <a href="insertarproducto.jsp" class="collapse__sublink">Agregar</a>
-                            </ul>
-                        </div>
-
-                        <div href="#" class="nav__link">
-                            <ion-icon name="reader-outline" class="nav__icon"></ion-icon>
-                            <span class="nav__name">Reportes</span>
-
-                            <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
-
-                            <ul class="collapse__menu">
-                                <a href="listadodeusuarios.jsp" class="collapse__sublink">Usuarios</a>
-                                <br>
-                                <a href="listadodeclientes.jsp" class="collapse__sublink">Clientes</a>
-                                <a href="actualizarproveedor.jsp" class="collapse__sublink">Ventas</a>
-                                
-                            </ul>
-                        </div>
-                            
-                            <a href="#" class="nav__link">
-                             <ion-icon name="log-out-outline" class="nav__icon"></ion-icon>
-                             <span class="nav__name">Cerrar sesión</span>
-                        </a>
-                    </div>
-                </div>
-            </nav>
-        </div>
-        <!-- ===== IONICONS ===== -->
-       <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
-
-        <!-- ===== MAIN JS ===== -->
-    <script src="script.js"></script>
-
-	<div style="padding-left: 5px">
 
 	<div id="layoutSidenav_content">
 		<main>
@@ -455,7 +356,7 @@
 			var client = document.getElementById("cedula_cliente").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
-			req.open('GET', 'http://localhost:8080/consultarcliente?cedula_cliente='
+			req.open('GET', 'http://localhost:8080/consultarcliente?cedula='
 					+ client, false);
 			req.send(null);
 			var cliente = null;
@@ -500,7 +401,7 @@
 			var prod1 = document.getElementById("codigo_producto1").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
-			req.open('GET', 'http://localhost:8080/consultarproducto?codigo_producto='
+			req.open('GET', 'http://localhost:8080/consultarproducto?code='
 					+ prod1, false);
 			req.send(null);
 			var producto1 = null;
@@ -525,7 +426,7 @@
 			var prod2 = document.getElementById("codigo_producto2").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
-			req.open('GET', 'http://localhost:8080/consultarproducto?codigo_producto='
+			req.open('GET', 'http://localhost:8080/consultarproducto?code='
 					+ prod2, false);
 			req.send(null);
 			var producto2 = null;
@@ -535,7 +436,7 @@
 			if (producto2.toString() != "") {
 				console.log(producto2);
 				document.getElementById("nombre_producto2").value = producto2[0].nombre_producto;
-				precio2 = parseFloat(producto2[0].precio_venta);
+				precio1 = parseFloat(producto2[0].precio_venta);
 				console.log("Precio2: " + precio2)
 				icono.classList.replace("text-danger", "text-success");
 				icono.classList.replace("fa-times", "fa-check");
@@ -550,7 +451,7 @@
 			var prod3 = document.getElementById("codigo_producto3").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
-			req.open('GET', 'http://localhost:8080/consultarproducto?codigo_producto='
+			req.open('GET', 'http://localhost:8080/consultarproducto?code='
 					+ prod3, false);
 			req.send(null);
 			var producto3 = null;
@@ -560,7 +461,7 @@
 			if (producto3.toString() != "") {
 				console.log(producto3);
 				document.getElementById("nombre_producto3").value = producto3[0].nombre_producto;
-				precio3 = parseFloat(producto3[0].precio_venta);
+				precio1 = parseFloat(producto3[0].precio_venta);
 				console.log("Precio3: " + precio3)
 				icono.classList.replace("text-danger", "text-success");
 				icono.classList.replace("fa-times", "fa-check");
