@@ -34,7 +34,6 @@
 
 <body>
 
-
 	<!-- Navbar modulos-->
 	<body id="body-pd">
         <div class="l-navbar" id="navbar">
@@ -147,7 +146,7 @@
 
 	<div style="padding-left: 5px">
 		<h1>
-			<i class="fas fa-skull-crossbones"></i> Datos del cliente a eliminar
+			<i class="fas fa-user-minus"></i> Eliminar cliente
 		</h1>
 		<div class="container">
 
@@ -167,12 +166,14 @@
 						placeholder="Inserte cedula aqui..."
 						aria-describedby="basic-addon1" required id="cedula_cliente">
 				</div>
+				
+				<button type="button" class="btn btn-danger" onclick="eliminar()">
+				<i class="fas fa-user-minus"></i> Eliminar cliente
+				</button>
 
 			</form>
 
-			<button type="button" class="btn btn-danger" onclick="eliminar()">
-				<i class="fas fa-skull-crossbones"></i> Eliminar cliente
-			</button>
+			
 			
 	<script>
 		function eliminar() {

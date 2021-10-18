@@ -181,7 +181,10 @@
 	
 	<div style="padding-left: 5px;">
 	
-		<h1>Tabla de usuarios</h1>
+		<h1>
+		<i class="fas fa-list"></i> Tabla de usuarios
+		</h1>
+			<br>
 			<div class="container">
 				<div class="row">
 					<!--  Aqui es donde se autogenera la tabla basado en el script -->

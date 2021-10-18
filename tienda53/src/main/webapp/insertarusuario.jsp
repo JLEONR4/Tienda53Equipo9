@@ -146,12 +146,9 @@
 
 	<div style="padding-left: 5px">
 		<h1>
-			<i class="fas fa-skull-crossbones"></i> Datos del usuario a eliminar
+			<i class="fas fa-user-plus"></i> Agregar un nuevo usuario
 		</h1>
-		<div class="container">
-		<h1>
-			Datos del nuevo usuario
-		</h1>
+
 		<div class="container">
 		
 		

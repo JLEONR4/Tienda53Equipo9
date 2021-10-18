@@ -145,7 +145,7 @@
   </body>
 	<div style="padding-left: 5px">
 		<h1>
-			<i class="fas fa-sync"></i> Datos a actualizar del usuario
+			<i class="fas fa-user-edit"></i> Actualizar usuario
 		</h1>
 		<div class="container">
 

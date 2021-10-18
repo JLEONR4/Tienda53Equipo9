@@ -145,7 +145,7 @@
         <!-- ===== MAIN JS ===== -->
     <script src="script.js"></script>
 		<h1>
-			<i class="fas fa-sync"></i> Datos a actualizar del cliente
+			<i class="fas fa-user-edit"></i> Actualizar cliente
 		</h1>
 		<div class="container">
 

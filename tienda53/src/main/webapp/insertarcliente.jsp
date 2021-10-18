@@ -146,7 +146,7 @@
 
 	<div style="padding-left: 5px">
 		<h1>
-			Datos del nuevo cliente
+			<i class="fas fa-user-plus"></i> Agregar un nuevo cliente
 		</h1>
 		<div class="container">
 		
