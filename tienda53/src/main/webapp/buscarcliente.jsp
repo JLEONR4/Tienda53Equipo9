@@ -146,7 +146,7 @@
 
 	<div style="padding-left: 5px">
 		<h1>
-			<i class="fas fa-search"></i> Buscando un cliente
+			<i class="fas fa-search"></i> Buscar cliente
 		</h1>
 		<div class="container">
 
@@ -205,9 +205,7 @@
 <br>
 <br>
 <br>
-			<button type="button" class="btn btn-primary" onclick="enviar()">
-				<i class="fas fa-search"></i> Buscar cliente
-			</button>
+			
 			
 			
 	

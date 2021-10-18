@@ -188,8 +188,6 @@ public class VentaDAO {
 			// ejecute la sentencia
 			ResultSet res = consulta.executeQuery();
 			
-			System.out.println("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHOOOOOOOOOOOOOOOOOOOLLLLLLLLLLLLLLAAAAAAAAAAAAA");
-
 			// cree un objeto para cada encontrado en la base de datos basado en la clase
 			// entidad con los datos encontrados
 			while (res.next()) {

@@ -146,7 +146,7 @@
 
 	<div style="padding-left: 5px">
 		<h1>
-			<i class="fas fa-skull-crossbones"></i> Datos del usuario a eliminar
+			<i class="fas fa-user-minus"></i> Eliminar usuario
 		</h1>
 		<div class="container">
 
@@ -166,12 +166,14 @@
 						placeholder="Inserte cedula aqui..."
 						aria-describedby="basic-addon1" required id="cedula_usuario">
 				</div>
+				
+				<button type="button" class="btn btn-danger" onclick="eliminar()">
+				<i class="fas fa-user-minus"></i> Eliminar usuario
+				</button>
 
 			</form>
 
-			<button type="button" class="btn btn-danger" onclick="eliminar()">
-				<i class="fas fa-skull-crossbones"></i> Eliminar usuario
-			</button>
+			
 		
 	<script>
 		function eliminar() {
