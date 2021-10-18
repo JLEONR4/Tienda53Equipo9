@@ -10,7 +10,9 @@
 <!-- Tamaño de la pantalla -->
 <meta name="viewport" content="width=device-width">
 <!-- titulo de la pestaña -->
-<title>Eliminar proveedor</title>
+<title>Lista de usuarios</title>
+
+
 <!-- bootstrap-->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -28,14 +30,41 @@
 <link href="style2.css" rel="stylesheet" type="text/css" />
 
 
+<script>
+	var baseurl = "http://localhost:8080/listarusuarios";
+	function loadusuarios() {
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.open("GET", baseurl, true);
+		xmlhttp.onreadystatechange = function() {
+			if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+				var usuarios = JSON.parse(xmlhttp.responseText);
+				var tbltop = "<table class='table table-dark table-striped'><tr><th>Cedula</th><th>Email</th><th>Nombre</th><th>Password</th><th>Usuario</th></tr>";
+				var main = "";
+				for (i = 0; i < usuarios.length; i++) {
+					main += "<tr><td>" + usuarios[i].cedula_usuario
+							+ "</td><td>" + usuarios[i].email_usuario
+							+ "</td><td>" + usuarios[i].nombre_usuario
+							+ "</td><td>" + usuarios[i].password + "</td><td>"
+							+ usuarios[i].usuario + "</td></tr>";
+				}
+				var tblbottom = "</table>";
+				var tbl = tbltop + main + tblbottom;
+				document.getElementById("usuariosinfo").innerHTML = tbl;
+			}
+		};
+		xmlhttp.send();
+	}
+	window.onload = function() {
+		loadusuarios();
+	}
+</script>
 
 </head>
 
 
 <body>
 
-
-	<!-- Navbar modulos-->
+<!-- Navbar modulos-->
 	<body id="body-pd">
         <div class="l-navbar" id="navbar">
             <nav class="nav">
@@ -144,87 +173,23 @@
 
         <!-- ===== MAIN JS ===== -->
     <script src="script.js"></script>
-
-	<div style="padding-left: 5px">
-		<h1>
-			<i class="fas fa-skull-crossbones"></i> Datos del proveedor a eliminar
-		</h1>
-		<div class="container">
-
-
-			<div id="error" class="alert alert-danger visually-hidden"
-				role="alert">Error al eliminar el proveedor, verifique que 
-				exista un proveedor con la xxx</div>
-
-			<div id="correcto" class="alert alert-success visually-hidden"
-				role="alert">Proveedor eliminado con exito</div>
-
-			<form id="form1">
-			
-				<div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon1">Nit del proveedor</span> <input
-						type="text" class="form-control"
-						placeholder="Inserte NIT del proveedor aqui..."
-						aria-describedby="basic-addon1" required id="nit_proveedor">
-				</div>
-
-			</form>
-
-			<button type="button" class="btn btn-danger" onclick="eliminar()">
-				<i class="fas fa-skull-crossbones"></i> Eliminar proveedor
-			</button>
-			
-			
 	
-	<script>
-		function eliminar() {
-			var y = document.getElementById("nit_proveedor").value;
-			var req = new XMLHttpRequest();
-			var coincidencia = false;
-			req.open('GET', 'http://localhost:8080/listarproveedores', false);
-			req.send(null);
-			var proveedores = null;
-			if (req.status == 200)
-				proveedores = JSON.parse(req.responseText);
-			console.log(JSON.parse(req.responseText));
-
-			for (i = 0; i < proveedores.length; i++) {
-				
-				console.log(proveedores[i].nit_proveedor);
-				if (proveedores[i].nit_proveedor == y) {
-					console.log(proveedores[i].nit_proveedor + " " + y);
-					coincidencia = true;
-					break;
-				}
-			}
-			console.log(coincidencia);
-
-			if (coincidencia != false) {
-				var nit=document.getElementById("nit_proveedor").value;
-				
-				var xhr = new XMLHttpRequest();
-				xhr.open("DELETE", "http://localhost:8080/eliminarproveedor?nit_proveedor="+nit);
-				
-				var element = document.getElementById("error");
-				element.classList.add("visually-hidden");
-				
-				var element2 = document.getElementById("correcto");
-				element2.classList.remove("visually-hidden");
-
-				document.getElementById("nit_proveedor").value = "";
-				xhr.send();
-
-			} else {
-				var element = document.getElementById("error");
-				element.classList.remove("visually-hidden");
-				
-				var element2 = document.getElementById("correcto");
-				element2.classList.add("visually-hidden");
-				
-				document.getElementById("nit_proveedor").value = "";;
-			}
-		}
-	</script>
-
+	
+	
+	<!-- contenido  -->
+	
+	<div style="padding-left: 5px;">
+	
+		<h1>Tabla de usuarios</h1>
+			<div class="container">
+				<div class="row">
+					<!--  Aqui es donde se autogenera la tabla basado en el script -->
+					<div class="col align-self-center" id="usuariosinfo">
+					
+					</div>
+	
+				</div>
+			</div>
+			
 </body>
 </html>

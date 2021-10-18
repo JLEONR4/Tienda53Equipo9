@@ -5,8 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class TiendaApplication {
-	
-	//funcion main de todo el proyecto
+
 	public static void main(String[] args) {
 		SpringApplication.run(TiendaApplication.class, args);
 	}
