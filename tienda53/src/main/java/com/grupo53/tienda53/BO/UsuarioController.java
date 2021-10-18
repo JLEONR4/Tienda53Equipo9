@@ -51,6 +51,11 @@ public class UsuarioController {
 		Dao.actualizarUsuario(user);
 	}
 	
+	@GetMapping("/consultarusuariocedula")
+	public ArrayList<UsuarioVO> consultarUsuarioCedula(Integer cedula_usuario) {
+		UsuarioDAO Dao = new UsuarioDAO();
+		return Dao.consultarUsuarioCedula(cedula_usuario);
+	}
 	
 
 }
