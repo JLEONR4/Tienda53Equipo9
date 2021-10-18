@@ -109,25 +109,25 @@
 				<ion-icon name="cash-outline" class="nav__icon"></ion-icon>
 				<span class="nav__name">Ventas</span>
 
-				<ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
+                            <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
 
-				<ul class="collapse__menu">
+                            <ul class="collapse__menu">
+                                
+                                <a href="insertarventa.jsp" class="collapse__sublink">Agregar</a>
+                            </ul>
+                        </div>
 
-					<a href="insertarproducto.jsp" class="collapse__sublink">Agregar</a>
-				</ul>
-			</div>
+                        <div href="#" class="nav__link">
+                            <ion-icon name="reader-outline" class="nav__icon"></ion-icon>
+                            <span class="nav__name">Reportes</span>
 
-			<div href="#" class="nav__link">
-				<ion-icon name="reader-outline" class="nav__icon"></ion-icon>
-				<span class="nav__name">Reportes</span>
+                            <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
 
-				<ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
-
-				<ul class="collapse__menu">
-					<a href="listadodeusuarios.jsp" class="collapse__sublink">Usuarios</a>
-					<br>
-					<a href="listadodeclientes.jsp" class="collapse__sublink">Clientes</a>
-					<a href="actualizarproveedor.jsp" class="collapse__sublink">Ventas</a>
+                            <ul class="collapse__menu">
+                                <a href="listadodeusuarios.jsp" class="collapse__sublink">Usuarios</a>
+                                <br>
+                                <a href="listadodeclientes.jsp" class="collapse__sublink">Clientes</a>
+                                <a href="listarventas.jsp" class="collapse__sublink">Ventas</a>
 
 				</ul>
 			</div>

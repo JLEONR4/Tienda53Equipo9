@@ -113,11 +113,11 @@
 
                             <ul class="collapse__menu">
                                 
-                                <a href="insertarproducto.jsp" class="collapse__sublink">Agregar</a>
+                                <a href="insertarventa.jsp" class="collapse__sublink">Agregar</a>
                             </ul>
                         </div>
 
-                        <div class="nav__link">
+                        <div href="#" class="nav__link">
                             <ion-icon name="reader-outline" class="nav__icon"></ion-icon>
                             <span class="nav__name">Reportes</span>
 
@@ -127,7 +127,7 @@
                                 <a href="listadodeusuarios.jsp" class="collapse__sublink">Usuarios</a>
                                 <br>
                                 <a href="listadodeclientes.jsp" class="collapse__sublink">Clientes</a>
-                                <a href="actualizarproveedor.jsp" class="collapse__sublink">Ventas</a>
+                                <a href="listarventas.jsp" class="collapse__sublink">Ventas</a>
                                 
                             </ul>
                         </div>

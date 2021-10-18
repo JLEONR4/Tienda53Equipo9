@@ -141,7 +141,7 @@ var baseurl = "http://localhost:8080/listarproductos";
 
                             <ul class="collapse__menu">
                                 
-                                <a href="insertarproducto.jsp" class="collapse__sublink">Agregar</a>
+                                <a href="insertarventa.jsp" class="collapse__sublink">Agregar</a>
                             </ul>
                         </div>
 
@@ -155,7 +155,7 @@ var baseurl = "http://localhost:8080/listarproductos";
                                 <a href="listadodeusuarios.jsp" class="collapse__sublink">Usuarios</a>
                                 <br>
                                 <a href="listadodeclientes.jsp" class="collapse__sublink">Clientes</a>
-                                <a href="actualizarproveedor.jsp" class="collapse__sublink">Ventas</a>
+                                <a href="listarventas.jsp" class="collapse__sublink">Ventas</a>
                                 
                             </ul>
                         </div>
@@ -176,7 +176,7 @@ var baseurl = "http://localhost:8080/listarproductos";
 
 	<div style="padding-left: 5px">
 		<h1>
-			<i class="fas fa-plus-circle"></i> Insertando archivo de productos
+			<i class="far fa-plus-square"></i> Insertando archivo de productos
 		</h1>
 		<div class="container">
 
@@ -193,26 +193,29 @@ var baseurl = "http://localhost:8080/listarproductos";
 						archivo CSV con el inventario de productos</label> <input
 						class="form-control form-control-lg" id="archivo" type="file"
 						accept=".csv">
+						<br>
 					<button type="button" class="btn btn-success"
 						onclick="subirArchivo()">Subir archivo</button>
 				</div>
+				
+				<br>
+				<h2>Tabla de productos</h2>
+				<div class="container">
+					<div class="row">
+						<!--  Aqui es donde se autogenera la tabla basado en el script -->
+						<div class="col align-self-center" id="productosinfo">
+					</div>
+	
+				</div>
+			</div>
 
 			</form>
 
 		</div>
 
 	</div>
-	&nbsp;
-	<h1><i class="fas fa-apple-alt"></i> Tabla de productos</h1>
-			<div class="container">
-				<div class="row">
-					<!--  Aqui es donde se autogenera la tabla basado en el script -->
-					<div class="col align-self-center" id="productosinfo">
-					
-					</div>
 	
-				</div>
-			</div>
+	
 	<script>
 		function subirArchivo() {
 

@@ -111,7 +111,7 @@
 
                             <ul class="collapse__menu">
                                 
-                                <a href="insertarproducto.jsp" class="collapse__sublink">Agregar</a>
+                                <a href="insertarventa.jsp" class="collapse__sublink">Agregar</a>
                             </ul>
                         </div>
 
@@ -125,7 +125,7 @@
                                 <a href="listadodeusuarios.jsp" class="collapse__sublink">Usuarios</a>
                                 <br>
                                 <a href="listadodeclientes.jsp" class="collapse__sublink">Clientes</a>
-                                <a href="actualizarproveedor.jsp" class="collapse__sublink">Ventas</a>
+                                <a href="listarventas.jsp" class="collapse__sublink">Ventas</a>
                                 
                             </ul>
                         </div>
@@ -146,7 +146,7 @@
 
 	<div style="padding-left: 5px">
 		<h1>
-			<i class="fas fa-search"></i> Buscando un proveedor
+			<i class="fas fa-search"></i> Buscar proveedor
 		</h1>
 		<div class="container">
 
@@ -165,7 +165,9 @@
 						placeholder="Inserte numero de nit del proveedor aqui..."
 						aria-describedby="basic-addon4" required id="nit_proveedorsearch" >
 				</div>
-				<br>
+				<button type="button" class="btn btn-primary" onclick="enviar()">
+				<i class="fas fa-search"></i> Buscar proveedor
+				</button>
 				<br>
 				<br>
 				<div class="input-group mb-3">
@@ -198,16 +200,8 @@
 						aria-describedby="basic-addon5" required id="telefono_proveedor"  disabled="disabled">
 				</div>
 			</form>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-			<button type="button" class="btn btn-primary" onclick="enviar()">
-				<i class="fas fa-search"></i> Buscar proveedor
-			</button>
+
+			
 			
 	
 	
