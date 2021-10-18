@@ -12,7 +12,7 @@ public class Conexion {
 	//root
 	static String usuariobd = "root";
 	//mintic
-	static String clavebd = "mintic53";
+	static String clavebd = "mintic";
 	//127.0.0.1 == localhost
 	static String url = "jdbc:mysql://127.0.0.1/" + nombre_base_datos;
 	
