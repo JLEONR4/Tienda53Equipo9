@@ -111,7 +111,7 @@
 
                             <ul class="collapse__menu">
                                 
-                                <a href="insertarproducto.jsp" class="collapse__sublink">Agregar</a>
+                                <a href="insertarventa.jsp" class="collapse__sublink">Agregar</a>
                             </ul>
                         </div>
 
@@ -125,7 +125,7 @@
                                 <a href="listadodeusuarios.jsp" class="collapse__sublink">Usuarios</a>
                                 <br>
                                 <a href="listadodeclientes.jsp" class="collapse__sublink">Clientes</a>
-                                <a href="actualizarproveedor.jsp" class="collapse__sublink">Ventas</a>
+                                <a href="listarventas.jsp" class="collapse__sublink">Ventas</a>
                                 
                             </ul>
                         </div>
@@ -146,7 +146,7 @@
 
 	<div style="padding-left: 5px">
 		<h1>
-			<i class="fas fa-sync"></i> Datos a actualizar del proveedor
+			<i class="fas fa-user-edit"></i> Actualizar proveedor
 		</h1>
 		<div class="container">
 

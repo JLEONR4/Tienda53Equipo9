@@ -10,7 +10,7 @@
 <!-- Tamaño de la pantalla -->
 <meta name="viewport" content="width=device-width">
 <!-- titulo de la pestaña -->
-<title>Lista de proveedores</title>
+<title>Lista de ventas</title>
 
 
 <!-- bootstrap-->
@@ -31,31 +31,32 @@
 
 
 <script>
-	var baseurl = "http://localhost:8080/listarproveedores";
-	function loadproveedores() {
+	var baseurl = "http://localhost:8080/listarventas";
+	function loadventas() {
 		var xmlhttp = new XMLHttpRequest();
 		xmlhttp.open("GET", baseurl, true);
 		xmlhttp.onreadystatechange = function() {
 			if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-				var proveedores = JSON.parse(xmlhttp.responseText);
-				var tbltop = "<table class='table table-dark table-striped'><tr><th>Nit</th><th>Ciudad</th><th>Direccion</th><th>Nombre</th><th>Telefono</th></tr>";
+				var ventas = JSON.parse(xmlhttp.responseText);
+				var tbltop = "<table class='table table-dark table-striped'><tr><th>Codigo venta</th><th>Cedula cliente</th><th>Cedula usuario</th><th>Iva venta</th><th>Total venta</th><th>Valor venta</th></tr>";
 				var main = "";
-				for (i = 0; i < proveedores.length; i++) {
-					main += "<tr><td>" + proveedores[i].nit_proveedor
-							+ "</td><td>" + proveedores[i].ciudad_proveedor
-							+ "</td><td>" + proveedores[i].direccion_proveedor
-							+ "</td><td>" + proveedores[i].nombre_proveedor + "</td><td>"
-							+ proveedores[i].telefono_proveedor + "</td></tr>";
+				for (i = 0; i < ventas.length; i++) {
+					main += "<tr><td>" + ventas[i].codigo_venta
+							+ "</td><td>" + ventas[i].cedula_cliente
+							+ "</td><td>" + ventas[i].cedula_usuario
+							+ "</td><td>" + ventas[i].ivaventa  
+							+ "</td><td>" + ventas[i].total_venta + "</td><td>"
+							+ ventas[i].valor_venta + "</td></tr>";
 				}
 				var tblbottom = "</table>";
 				var tbl = tbltop + main + tblbottom;
-				document.getElementById("proveedoresinfo").innerHTML = tbl;
+				document.getElementById("ventasinfo").innerHTML = tbl;
 			}
 		};
 		xmlhttp.send();
 	}
 	window.onload = function() {
-		loadproveedores();
+		loadventas();
 	}
 </script>
 
@@ -173,6 +174,8 @@
 
         <!-- ===== MAIN JS ===== -->
     <script src="script.js"></script>
+
+	<div style="padding-left: 5px">
 	
 	
 	<!-- contenido  -->
@@ -180,18 +183,20 @@
 	<div style="padding-left: 5px;">
 	
 		<h1>
-		<i class="fas fa-list"></i> Tabla de proveedores
+		<i class="fas fa-list"></i> Tabla de ventas
 		</h1>
 		<br>
 			<div class="container">
 				<div class="row">
 					<!--  Aqui es donde se autogenera la tabla basado en el script -->
-					<div class="col align-self-center" id="proveedoresinfo">
+					<div class="col align-self-center" id="ventasinfo">
 					
 					</div>
 	
 				</div>
 			</div>
+	
+		
 
 
 
