@@ -199,10 +199,13 @@
 </button>
 	<script>
 		function actualizar() {
+			var getUrl = window.location;
+			var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+			
 			var y = document.getElementById("cedula_cliente").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
-			req.open('GET', 'http://localhost:8080/listarclientes', false);
+			req.open('GET', baseUrl+'/listarclientes', false);
 			req.send(null);
 			var clientes = null;
 			if (req.status == 200)

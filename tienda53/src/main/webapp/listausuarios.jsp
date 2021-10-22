@@ -31,7 +31,9 @@
 
 
 <script>
-	var baseurl = "http://localhost:8080/listarusuarios";
+
+
+	<!--var baseurl = "http://localhost:8080/listarusuarios";
 	function loadusuarios() {
 		var xmlhttp = new XMLHttpRequest();
 		xmlhttp.open("GET", baseurl, true);
@@ -56,7 +58,47 @@
 	}
 	window.onload = function() {
 		loadusuarios();
-	}
+	}-->
+	
+	var getUrl = window.location;
+	var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+	
+	window.addEventListener('DOMContentLoaded', event => {
+	    // Simple-DataTables
+	    // https://github.com/fiduswriter/Simple-DataTables/wiki
+		let table=null;
+	    if (datatablesuers) {
+	        table=new simpleDatatables.DataTable("#datatablesuers", {
+	            searchable: true,
+	            labels: {
+	                placeholder: "Buscar...",
+	                perPage: "{select} registros por pagina",
+	                noRows: "No hay registros",
+	                info: "Mostrando {start} a {end} de {rows} registros",
+	            }
+	        });
+	    }
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.open("GET", baseUrl+"/listausuarios", true);
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+					var usuarios = JSON.parse(xmlhttp.responseText);
+					
+					for (i = 0; i < usuarios.length; i++) {
+						let fila = [
+							usuarios[i].cedula_usuario.toString(), 
+							usuarios[i].email_usuario, 
+							usuarios[i].nombre_usuario, 
+							usuarios[i].password, 
+							usuarios[i].usuario
+						];
+					    table.rows().add(fila);
+					}
+				}
+			};
+			
+			xmlhttp.send();
+	});
 </script>
 
 </head>
